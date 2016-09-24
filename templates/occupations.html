@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title> {{title}} </title>
+</head>
+<body>
+<h1> DHIRAJ PATEL WORK 3 </h1>
+      <table border="10">
+   {% for item in L%}
+   <tr>
+  	<td>
+    	{{item.2}}
+	</td>
+
+	<td>
+  	{{(item.1-item.0)/100}}
+
+	</td>
+   </tr>
+    {% endfor %}
+
+<br>
+Randomly Selected Occupation:{{randjob}}
+<br>
+<br>
+
+</body>
+
+</html>
