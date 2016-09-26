@@ -16,13 +16,13 @@ def updateList():
     return L
 
 def randchooser():
-    rand = random.random() * 100
+    rand = random.random() * 1000
     L = updateList()
     for row in L:
-        if rand < row[1] and rand > row[0] :
+        if rand > row[0] and rand < row[1]:
             return row[2]
 
-@app.route("/occupations")
+@app.route("/")
 def main():
     return render_template("occupations.html", title="Occupations", L=updateList(), randjob = randchooser())
 
