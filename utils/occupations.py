@@ -1,8 +1,6 @@
-from flask import Flask, render_template
-app = Flask(__name__)
-
 import random
-qwer = open("occupations.csv",'r')
+
+qwer = open("data/occupations.csv",'r')
 file = qwer.readlines()
 qwer.close()
 def updateList():
@@ -22,11 +20,3 @@ def randchooser():
         if rand > row[0] and rand < row[1]:
             return row[2]
 
-@app.route("/")
-def main():
-    return render_template("occupations.html", title="Occupations", L=updateList(), randjob = randchooser())
-
-
-
-if __name__ == '__main__':
-    app.run(debug=True)
